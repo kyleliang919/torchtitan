@@ -303,6 +303,8 @@ def build_optimizers(
     optimizer_classes = {
         "Adam": torch.optim.Adam,
         "AdamW": torch.optim.AdamW,
+        "C-AdamW": c_adamw.AdamW,
+        "Muon": muon.Muon
     }
     if name not in optimizer_classes:
         raise NotImplementedError(f"Optimizer {name} not added.")
