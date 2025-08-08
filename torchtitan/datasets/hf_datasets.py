@@ -26,11 +26,12 @@ def _load_c4_dataset(dataset_path: str, split: str):
     """Load C4 dataset with default configuration."""
     return load_dataset(dataset_path, name="en", split=split, streaming=True)
 
-
 def _process_c4_text(sample: dict[str, Any]) -> str:
     """Process C4 dataset sample text."""
     return sample["text"]
 
+def _load_fineweb_dataset(dataset_path: str, split:str, subset:str):
+    return load_dataset(dataset_path, name=subset, split=split, streaming=True)
 
 @dataclass
 class DatasetConfig:
@@ -56,6 +57,46 @@ DATASETS = {
         loader=partial(_load_c4_dataset, split="validation"),
         text_processor=_process_c4_text,
     ),
+    "fineweb_edu_10BT": DatasetConfig(
+        path="HuggingFaceFW/fineweb-edu",
+        loader=partial(_load_fineweb_dataset, split="train", name="sample-10BT"),
+        text_processor=_process_c4_text,
+    ),
+    "fineweb_edu_10BT_validation": DatasetConfig(
+        path="HuggingFaceFW/fineweb-edu",
+        loader=partial(_load_fineweb_dataset, split="validation", name="sample-10BT"),
+        text_processor=_process_c4_text,
+    ),
+    "fineweb_edu_100BT": DatasetConfig(
+        path="HuggingFaceFW/fineweb-edu",
+        loader=partial(_load_fineweb_dataset, split="train", name="sample-100BT"),
+        text_processor=_process_c4_text,
+    ),
+    "fineweb_edu_100BT_validation": DatasetConfig(
+        path="HuggingFaceFW/fineweb-edu",
+        loader=partial(_load_fineweb_dataset, split="validation", name="sample-100BT"),
+        text_processor=_process_c4_text,
+    ),
+    "fineweb_edu_350BT": DatasetConfig(
+        path="HuggingFaceFW/fineweb-edu",
+        loader=partial(_load_fineweb_dataset, split="train", name="sample-350BT"),
+        text_processor=_process_c4_text,
+    ),
+    "fineweb_edu_350BT_validation": DatasetConfig(
+        path="HuggingFaceFW/fineweb-edu",
+        loader=partial(_load_fineweb_dataset, split="validation", name="sample-350BT"),
+        text_processor=_process_c4_text,
+    ),
+    "fineweb_edu": DatasetConfig(
+        path="HuggingFaceFW/fineweb-edu",
+        loader=partial(_load_fineweb_dataset, split="train"),
+        text_processor=_process_c4_text,
+    ),
+    "fineweb_edu_validation": DatasetConfig(
+        path="HuggingFaceFW/fineweb-edu",
+        loader=partial(_load_fineweb_dataset, split="validation"),
+        text_processor=_process_c4_text,
+    )
 }
 
 
