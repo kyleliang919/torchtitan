@@ -57,32 +57,32 @@ DATASETS = {
         loader=partial(_load_c4_dataset, split="validation"),
         text_processor=_process_c4_text,
     ),
-    "fineweb_edu_10BT": DatasetConfig(
+    "fineweb_edu_10bt": DatasetConfig(
         path="HuggingFaceFW/fineweb-edu",
         loader=partial(_load_fineweb_dataset, split="train", name="sample-10BT"),
         text_processor=_process_c4_text,
     ),
-    "fineweb_edu_10BT_validation": DatasetConfig(
+    "fineweb_edu_10bt_validation": DatasetConfig(
         path="HuggingFaceFW/fineweb-edu",
         loader=partial(_load_fineweb_dataset, split="validation", name="sample-10BT"),
         text_processor=_process_c4_text,
     ),
-    "fineweb_edu_100BT": DatasetConfig(
+    "fineweb_edu_100bt": DatasetConfig(
         path="HuggingFaceFW/fineweb-edu",
         loader=partial(_load_fineweb_dataset, split="train", name="sample-100BT"),
         text_processor=_process_c4_text,
     ),
-    "fineweb_edu_100BT_validation": DatasetConfig(
+    "fineweb_edu_100bt_validation": DatasetConfig(
         path="HuggingFaceFW/fineweb-edu",
         loader=partial(_load_fineweb_dataset, split="validation", name="sample-100BT"),
         text_processor=_process_c4_text,
     ),
-    "fineweb_edu_350BT": DatasetConfig(
+    "fineweb_edu_350bt": DatasetConfig(
         path="HuggingFaceFW/fineweb-edu",
         loader=partial(_load_fineweb_dataset, split="train", name="sample-350BT"),
         text_processor=_process_c4_text,
     ),
-    "fineweb_edu_350BT_validation": DatasetConfig(
+    "fineweb_edu_350bt_validation": DatasetConfig(
         path="HuggingFaceFW/fineweb-edu",
         loader=partial(_load_fineweb_dataset, split="validation", name="sample-350BT"),
         text_processor=_process_c4_text,
